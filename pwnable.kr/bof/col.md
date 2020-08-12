@@ -11,7 +11,7 @@ ssh col@pwnable.kr -p2222 (pw:guest)
 The MD5 message-digest algorithm is a widely used hash function producing a 128-bit hash value. Although MD5 was initially designed to be used as a cryptographic hash function, it has been found to suffer from extensive vulnerabilities. **It can still be used as a checksum to verify data integrity, but only against unintentional corruption.** It remains suitable for other non-cryptographic purposes, for example for determining the partition for a particular key in a partitioned database.[3]
 ### MD5 Hash Collision
 * https://en.wikipedia.org/wiki/MD5#Collision_vulnerabilities  
-* 
+* 풀고나서 보니 이게 왜 MD5 문제인지 모르겠다.. (앙)
 
 
 ## Write-Up
