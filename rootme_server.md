@@ -55,3 +55,35 @@ if(isset($_POST["ip"]) && !empty($_POST["ip"])){
 }
 ?-->
 ```
+
+## Backup file
+## HTTP - Directory Indexing
+## HTTP - Headers
+## HTTP - POST
+## HTTP - Improper redirect
+## HTTP - Verb tampering
+## Install files
+* You know phpBB?
+## CRLF
+## File upload - Double extensions
+## File upload - MIME type
+## [O] HTTP - Cookies
+* Edit this Cookie as 'admin'
+## Insecure Code Management
+## JSON Web Token(JWT) - Introduction
+## Directory traversal
+## Flie upload - Null byte
+## JSON Web Token(JWT) - Weak secret
+## JWT - Revoked token
+## PHP - assert()
+## PHP - Filters
+## PHP - register globals
+## PHP - Remote xdebug
+## File upload - ZIP
+## Command Injection - Filter bypass
+## Java - Server-side Template Injection
+## JSON Web Token (JWT) - Public key
+## Local File Inclusion
+## Local File Inclusion - Double encoding
+
+
